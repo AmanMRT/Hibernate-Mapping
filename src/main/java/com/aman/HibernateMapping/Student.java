@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -27,8 +28,19 @@ public class Student {
 //	this.course = course;
 //	}
 	
-	//FOr OnetoMany
-	@OneToMany//(mappedBy ="student")
+//	//FOr OnetoMany
+//	@OneToMany//(mappedBy ="student")
+//	public List<Course> list = new ArrayList<>();
+//		
+//	public List<Course> getList() {
+//		return list;
+//	}
+//	public void setList(List<Course> list) {
+//		this.list = list;
+//	}
+	
+	//FOr ManytoMany
+	@ManyToMany//(mappedBy ="student")
 	public List<Course> list = new ArrayList<>();
 		
 	public List<Course> getList() {
@@ -37,6 +49,8 @@ public class Student {
 	public void setList(List<Course> list) {
 		this.list = list;
 	}
+	
+	
 	public int getId() {
 		return id;
 	}

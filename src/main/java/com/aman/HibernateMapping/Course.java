@@ -1,8 +1,12 @@
 package com.aman.HibernateMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Course {
@@ -13,9 +17,16 @@ public class Course {
 	public int duration;
 	public int fee;
 	
-	public Course() {
-			
-		}
+	//FOr OnetoMany
+	@ManyToMany//(mappedBy ="student")
+	public List<Student> list = new ArrayList<>();
+		
+	public List<Student> getList() {
+		return list;
+	}
+	public void setList(List<Student> list) {
+		this.list = list;
+	}
 
 	public int getCid() {
 		return cid;

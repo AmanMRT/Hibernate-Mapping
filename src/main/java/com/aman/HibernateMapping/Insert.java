@@ -24,8 +24,10 @@ public class Insert {
 		 
 		// std.setCourse(course);		//for one to one mapping
 		 
-		std.getList().add(course);
+		//std.getList().add(course);	//for one to Many mapping
 		
+		 course.getList().add(std);		//for Many to MAny mapping
+		 
 		Configuration con = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Course.class) ;	//Config to use SessionFactory
 		    
 	    //Use this line or Just use SessionFactory Part
